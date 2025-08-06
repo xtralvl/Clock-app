@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/favicon-32x32.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./src/mobile.scss">
+  <title>Clock app</title>
+</head>
+
+<body>
+  <!--Here will be the random generated quotes-->
+  <main id="quotes-container" aria-label="Inspirational quote of the day">
+    <p id="quote">
+      “The science of operations, as derived from mathematics more especially, is a science of itself, and has its own abstract truth and value.”
+    </p>
+    <p id="author">Ada Lovelace</p>
+    <button id="refresh-button" aria-label="Refresh quote">
+      <img src="./assets/desktop/icon-refresh.svg" alt="Refresh icon">
+    </button>
+  </main>
+
+  <!-- Here is the current time, place and time zone of the user and the sun/moon icon changes based on the daytime-->
+  <!-- Here will be shown : on mobile: GOOD MORNING / GOOD AFTERNOON / GOOD EVENING / GOOD EVENING based on the actual time-->
+  <!-- on tab or bigger screen after the daytime declaration, "IT'S CURRENTLY "-->
+  <section id="current-time-container" aria-label="Current time and location">
+    <div id="greeting-and-sun-moon-icon-container">
+      <div id="sun-moon-icons" aria-hidden="true">
+        <img id="sun" src="./assets/desktop/icon-sun.svg" alt="Sun icon">
+        <img id="moon" src="./assets/desktop/icon-moon.svg" alt="Moon icon">
+      </div>
+      <h1 id="greeting-top">GOOD MORNING</h1>
+    </div>
+
+    <h2 id="current-time-top" aria-live="polite">11:37</h2>
+    <p id="current-time-zone-abbreviation-top">BST</p>
+    <h3 id="current-time-zone-top">IN LONDON, UK</h3>
+  </section>
+
+  <!-- This button initially has the word more and the downward arrow but as we click on it it changes to less and upward arrow-->
+  <nav id="more-less-buttons" aria-label="More or less information toggle">
+    <button id="more-button" aria-expanded="false" aria-controls="more-section">
+      MORE
+      <img src="./assets/desktop/icon-arrow-up.svg" alt="Expand icon">
+    </button>
+    <button id="less-button" aria-expanded="true" aria-controls="more-section">
+      LESS
+      <img src="./public/assets/desktop/icon-arrow-up.svg" alt="Collapse icon">
+    </button>
+  </nav>
+
+  <!-- This is the menu which opens and closes dinamically -->
+  <section id="more-section" aria-label="Additional date and time information">
+    <div id="current-time-zone-city-bottom">
+      <h4>CURRENT TIMEZONE</h4>
+      <h5>Europe/London</h5>
+    </div>
+    <div id="day-of-the-year-bottom">
+      <h4>DAY OF THE YEAR</h4>
+      <h5>295</h5>
+    </div>
+    <div id="day-of-the-week-bottom">
+      <h4>DAY OF THE WEEK</h4>
+      <h5>5</h5>
+    </div>
+    <div id="week-number-bottom">
+      <h4>WEEK NUMBER</h4>
+      <h5>42</h5>
+    </div>
+  </section>
+
+  <!-- JAVASCRIPT/TYPESCRIPT -->
+  <script src="./src/main.ts"></script>
+</body>
+</html>

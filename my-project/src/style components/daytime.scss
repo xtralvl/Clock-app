@@ -1,0 +1,14 @@
+body {
+    background-image: url('../public/assets/daytime-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    #current-time-container {
+
+        #moon {
+            display: none;
+        }
+    }
+
+}
