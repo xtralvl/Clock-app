@@ -17,6 +17,10 @@
     color: white;
   }
 
+  main {
+    height: 100vh;
+  }
+
   #quotes-container {
     display: grid;
     grid-template-columns: auto auto;
@@ -182,7 +186,7 @@
     }
 
     #more-section {
-      background-color: rgb(170, 169, 169, 0.95);
+      background-color: rgb(170, 169, 169, 0.9);
       color: #303030;
       padding: 3rem 1rem;
       display: grid;
