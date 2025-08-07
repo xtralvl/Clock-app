@@ -10,7 +10,7 @@
 
 <body>
   <!--Here will be the random generated quotes-->
-  <main id="quotes-container" aria-label="Inspirational quote of the day">
+  <section id="quotes-container" aria-label="Inspirational quote of the day">
     <p id="quote">
       “The science of operations, as derived from mathematics more especially, is a science of itself, and has its own abstract truth and value.”
     </p>
@@ -18,7 +18,7 @@
     <button id="refresh-button" aria-label="Refresh quote">
       <img src="./assets/desktop/icon-refresh.svg" alt="Refresh icon">
     </button>
-  </main>
+  </section>
 
   <!-- Here is the current time, place and time zone of the user and the sun/moon icon changes based on the daytime-->
   <!-- Here will be shown : on mobile: GOOD MORNING / GOOD AFTERNOON / GOOD EVENING / GOOD EVENING based on the actual time-->
@@ -32,9 +32,11 @@
       <h1 id="greeting-top">GOOD MORNING</h1>
     </div>
 
-    <h2 id="current-time-top" aria-live="polite">11:37</h2>
-    <p id="current-time-zone-abbreviation-top">BST</p>
-    <h3 id="current-time-zone-top">IN LONDON, UK</h3>
+    <div id="time-abbrevation-zone-container" >
+      <h2 id="current-time-top" aria-live="polite">11:37</h2>
+      <p id="current-time-zone-abbreviation-top">BST</p>
+      <h3 id="current-time-zone-top">IN LONDON, UK</h3>
+    </div>
   </section>
 
   <!-- This button initially has the word more and the downward arrow but as we click on it it changes to less and upward arrow-->
