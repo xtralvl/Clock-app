@@ -1,6 +1,17 @@
 // === MOBILE VERSION === //
-
+@use '../src/mixins/glass.scss' as *;
+@use '../src/mixins/daytime.scss' as daytime;
+@use '../src/mixins/nighttime.scss' as nighttime;
 @import "@fontsource/inter";
+
+.daytime {
+  @include daytime.daytime-styling;
+}
+
+.nighttime {
+  @include nighttime.nighttime-styling;
+}
+
 
 
 @media (max-width: 500px) {
