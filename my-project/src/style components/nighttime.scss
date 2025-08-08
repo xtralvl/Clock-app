@@ -1,0 +1,19 @@
+@mixin daytime-styling {
+    background-image: url('../public/assets/nighttime-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    #current-time-container {
+
+        #sun {
+            display: none;
+        }
+    }
+
+    #more-section {
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #ffffff;  
+      }
+    }
+    
