@@ -17,21 +17,23 @@
 @media (max-width: 500px) {
   body {
     font-family: 'Inter', sans-serif;
-    padding: 1rem 0 0rem 0;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: white;
+    max-width: 100vw;
+    overflow-x: hidden; // ✅ prevents horizontal scrollbars and layout breaking
+  }
+
+  main {
+    height: 100vh;
     background-image: url('../public/assets/daytime-background.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed; /* this keeps it fixed relative to viewport */
-    color: white;
-    width: 100%;
-    overflow-x: hidden; // ✅ prevents horizontal scrollbars and layout breaking
-  }
+    padding-top: 1rem;
 
-  main {
-    height: auto;
   }
 
   #quotes-container {
