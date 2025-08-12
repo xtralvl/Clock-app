@@ -15,7 +15,6 @@ refreshButton.addEventListener('click', () => {
             }
 
             const result = await response.json();
-            console.log(result);
         } catch (error: any) {
             console.log(error.message)
         }

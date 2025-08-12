@@ -8,4 +8,5 @@ import './components/getQuote.ts';
 import './components/getLocation.ts'
 import '../src/components/getTime.ts'
 import '../src/components/getSeconds.ts'
+import '../src/components/moreSectionData.ts'
 

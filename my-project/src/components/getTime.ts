@@ -10,7 +10,6 @@ async function getTime() {
         if (!response.ok) throw new Error(`Response status: ${response.status}`);
 
         const result = await response.json();
-        console.log(result);
 
         if (currentTime && result?.timezone?.current_time) {
             const isoTime = result.timezone.current_time;
