@@ -4,7 +4,7 @@ const cityAndCountry = document.getElementById('current-time-zone-top') as HTMLE
 const timeZoneAbbr = document.getElementById('current-time-zone-abbreviation-top') as HTMLElement | null;
 
 async function getLocation() {
-    const url = 'http://ipwho.is/';
+    const url = 'https://ipwho.is/';
 
     try {
         const response = await fetch(url);

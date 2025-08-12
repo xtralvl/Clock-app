@@ -3,7 +3,7 @@
 const currentTime = document.getElementById('current-time-top') as HTMLElement | null;
 
 async function getTime() {
-    const url = `http://ipwho.is/`;
+    const url = `https://ipwho.is/`;
 
     try {
         const response = await fetch(url);
