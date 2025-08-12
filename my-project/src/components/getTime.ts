@@ -1,36 +1,26 @@
-// === THIS FUNCTION FETCHES THE CURRENT TIME BASED ON THE PROVIDED IP ADDRESS FROM AN EXTERNAL API === //
+// === FETCHES THE CURRENT TIME (HH:MM) FROM THE USER'S IP AND DISPLAYS IT === //
 
 const currentTime = document.getElementById('current-time-top') as HTMLElement | null;
-const currentSeconds = document.getElementById('current-seconds-top') as HTMLElement | null;
-const currentTimeZone = document.getElementById('current-time-zone-top') as HTMLElement | null;
 
-export async function getTime(ip: string) {
-    const url = `https://timeapi.io/api/time/current/ip?ipAddress=${ip}`;
-    
+async function getTime() {
+    const url = `http://ipwho.is/`;
+
     try {
         const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`Response status: ${response.status}`);
 
         const result = await response.json();
-
-        // Log the full time result for debugging
         console.log(result);
 
-        // Optionally, update the DOM element with the current time if it exists
-        if (currentTime && result && result.time && currentSeconds && result.seconds && currentTimeZone && result.timeZone) {
-
-            const time = result.time;
-            const seconds = result.seconds;
-            const timeZone = result.timeZone;
-
-            currentTime.textContent = `${time}`;  // Adjust according to API's returned property
-            currentSeconds.textContent = `${seconds}`;  // Adjust according to API's returned property
-            currentTimeZone.textContent = `${timeZone}`;  // Adjust according to API's returned property
+        if (currentTime && result?.timezone?.current_time) {
+            const isoTime = result.timezone.current_time;
+            const time = isoTime.slice(11, 16); // HH:MM
+            currentTime.textContent = time;
         }
-
     } catch (error: any) {
         console.log(error.message);
     }
 }
+
+// Run immediately on import
+getTime();

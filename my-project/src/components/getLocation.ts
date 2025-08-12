@@ -1,33 +1,29 @@
-// === THIS FUNCTION FETCHES THE USER'S CURRENT LOCATION (CITY AND THE ABBREVIATION OF COUNTRY) BASED ON THEIR IP ADDRESS, FROM AN EXTERNAL API === //
+// === FETCHES THE USER'S CITY & COUNTRY FROM THEIR IP AND DISPLAYS IT === //
 
 const cityAndCountry = document.getElementById('current-time-zone-top') as HTMLElement | null;
+const timeZoneAbbr = document.getElementById('current-time-zone-abbreviation-top') as HTMLElement | null;
 
-export async function getLocation(): Promise<string | null> {
-    const url = 'https://api.ipbase.com/v2/info?apikey=ipb_live_jtLM2NbWsakEi1tt6KU3bvWKewS3Fq0FkLUJEczx';
+async function getLocation() {
+    const url = 'http://ipwho.is/';
 
     try {
         const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`Response status: ${response.status}`);
 
         const result = await response.json();
 
-        // Extract IP address, city name and country code from response
-        const ipAddress = result.data.ip as string | null;
-        const cityName = result.data.location.city.name as string | null;
-        const countryCode = result.data.location.country.alpha2 as string | null;
+        const cityName = result.city?.toUpperCase();
+        const countryCode = result.country_code;
+        const abbr = result.timezone?.abbr;
 
-        // Update the DOM element with city and country abbreviation if available
-        if (cityAndCountry && cityName && countryCode) {
-            cityAndCountry.textContent = `${cityName}, ${countryCode}`;
+        if (cityAndCountry && timeZoneAbbr && cityName && countryCode) {
+            cityAndCountry.textContent = `IN ${cityName}, ${countryCode}`;
+            timeZoneAbbr.textContent = abbr || '';
         }
-
-        // Return the IP address for use in other modules/functions
-        return ipAddress;
-
     } catch (error: any) {
         console.log(error.message);
-        return null; // Return null if any error occurs
     }
 }
+
+// Run immediately on import
+getLocation();
