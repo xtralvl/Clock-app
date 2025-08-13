@@ -5,7 +5,7 @@
 @import "@fontsource/inter";
 
 .morning {
-  background-image: url('../public/assets/sunrise.jpeg');
+  background-image: url('/assets/sunrise.jpeg');
 }
 
 .daytime {
@@ -28,7 +28,7 @@ button {
     padding: 1rem 0 0rem 0;
     margin: 0;
     box-sizing: border-box;
-    background-image: url('../public/assets/daytime-background.jpg');
+    background-image: url('/assets/daytime-background.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
