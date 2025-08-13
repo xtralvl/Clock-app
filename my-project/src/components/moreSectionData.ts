@@ -11,7 +11,6 @@ async function showMoreSectionDataApi() {
         }
 
         const result = await response.json();
-        console.log(result);
 
         const country = result.country;
         const city = result.city;
