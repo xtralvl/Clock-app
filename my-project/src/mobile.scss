@@ -12,6 +12,10 @@
   @include nighttime.nighttime-styling;
 }
 
+button {
+  cursor: pointer;
+}
+
 
 
 @media (max-width: 500px) {
