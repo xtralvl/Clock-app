@@ -1,36 +1,30 @@
-const currentDate = new Date();
-
 const greeting = document.getElementById('greeting-top') as HTMLElement | null;
 const body = document.querySelector('body') as HTMLBodyElement | null;
 
-
-
-function getCurrentGreeting() {
-    const currentHours = currentDate.getHours(); // 0–23
+function updateGreeting() {
+    const currentDate = new Date(); // Get fresh time each call
+    const currentHours = currentDate.getHours();
     let currentGreeting: string;
+
+    // Remove all possible classes first
+    body?.classList.remove('morning', 'daytime', 'nighttime');
 
     if (currentHours >= 5 && currentHours < 12) {
         currentGreeting = 'GOOD MORNING';
-        body?.classList.remove('nighttime')
         body?.classList.add('morning');
-
     } else if (currentHours >= 12 && currentHours < 17) {
         currentGreeting = 'GOOD AFTERNOON';
-        body?.classList.remove('morning')
         body?.classList.add('daytime');
-
-    } else if (currentHours >= 17 && currentHours < 21) {
-        currentGreeting = 'GOOD EVENING';
-        body?.classList.remove('daytime')
-        body?.classList.add('nighttime');
-
     } else {
-        currentGreeting = 'GOOD NIGHT';
+        currentGreeting = currentHours >= 17 && currentHours < 21 ? 'GOOD EVENING' : 'GOOD NIGHT';
+        body?.classList.add('nighttime');
     }
 
-    if (greeting) {
-        greeting.textContent = currentGreeting;
-    }
+    if (greeting) greeting.textContent = currentGreeting;
 }
 
-getCurrentGreeting();
+// Run immediately
+updateGreeting();
+
+// Optional: update every minute to keep background and greeting in sync
+setInterval(updateGreeting, 60000);
