@@ -4,6 +4,10 @@
 @use '../src/mixins/nighttime.scss' as nighttime;
 @import "@fontsource/inter";
 
+.morning {
+  background-image: url('../public/assets/sunrise.jpeg');
+}
+
 .daytime {
   @include daytime.daytime-styling;
 }

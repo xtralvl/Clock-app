@@ -16,8 +16,6 @@ const author = document.getElementById('author') as HTMLParagraphElement;
 
             const result = await response.json();
 
-            console.log(result)
-
             const fetchedQuote = result.quote;
             const fetchedAuthor = result.author;
 
