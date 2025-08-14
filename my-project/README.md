@@ -1,108 +1,94 @@
-# Frontend Mentor - Clock app
+# Clock App — Frontend Mentor Challenge
 
-![Design preview for the Clock app coding challenge](./preview.jpg)
+This project is my solution to the [Frontend Mentor Clock App challenge](https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM).  
+It’s a responsive, mobile-first web application that displays the current time, date, and location, along with a random inspirational quote.  
+I went beyond the original requirements by adding several extra features, including a seconds counter, auto-scrolling animations, and three distinct background images that adapt to the time of day.
 
-## Welcome! 👋
+---
 
-Thanks for purchasing this premium Frontend Mentor coding challenge.
+## 📸 Demo
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. These premium challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
+Live site: [View on Netlify](https://clock-app-frontend-mentor-xtralvl.netlify.app/)
 
-**To do this challenge, you need a solid understanding of HTML, CSS and JavaScript.**
+---
 
-## The challenge
+## ✨ Features
 
-Your challenge is to build out this clock application and get it looking as close to the design as possible. You'll be using the following APIs to retrieve the necessary data:
+- **Real-time clock** with hours, minutes, and **seconds counter**.
+- **Dynamic backgrounds** for **morning**, **daytime**, and **evening**, implemented with SCSS mixins and TypeScript logic.
+- **Inspirational quotes** fetched from an external API.
+- **Location & timezone detection** using the user’s IP address.
+- Expandable **"More" section** with additional time-related information.
+- **Auto scroll down/up** animation when toggling the "More" section.
+- Fully **responsive** layout (mobile-first design approach).
+- Built with modern frontend tools and practices.
 
-- [World Time API](http://worldtimeapi.org/) to set the time based on the visitor's IP adress. This API will also be used for additional data, like the day of the year shown in the expanded state.
-- [IP Geolocation API](https://freegeoip.app/) to set the city and country underneath the time
-- [Programming Quotes API](https://programming-quotes-api.herokuapp.com/) to generate random programming quotes.
-  - If the Programming Quotes API doesn't work, [here's a good alternative quote API](https://github.com/lukePeavey/quotable) you can use instead. It's not programming specific, but it will do the trick.
+---
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+## 📡 APIs Used
 
-Your users should be able to:
+1. **[ipwho.is](https://ipwho.is/)**  
+   - Retrieves user location, timezone, and current time **based on the user’s IP address**.
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- View the current time and location information based on their IP address
-- View additional information about the date and time in the expanded state
-- Be shown the correct greeting and background image based on the time of day they're visiting the site
-- Generate random programming quotes by clicking the refresh icon near the quote
+2. **[quoteslate.vercel.app API](https://quoteslate.vercel.app/api/quotes/random)**  
+   - Provides random inspirational quotes.
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+---
 
-### Expected Behaviour
+## 🛠️ Technologies & Tools
 
-- Change the greeting depending on the time of day. It should say:
-  - "Good morning" between 5am and 12pm
-  - "Good afternoon" between 12pm and 6pm
-  - "Good evening" between 6pm and 5am
-- Change the greeting icon and background image depending on the time of day. They should show:
-  - The sun icon and the daytime background image between 5am and 6pm
-  - The moon icon and the nighttime background image between 6pm and 5am
-- Generate a new random programming quote whenever the refresh icon is clicked
+- **TypeScript** — Component-based scripts for modularity.
+- **SCSS** — Custom styles with mixins for time-of-day themes.
+- **Vite** — Fast and modern development build tool.
+- **Figma** — Used for design reference.
+- **Netlify** — Hosting and deployment.
+- **ChatGPT** — Assisted in learning API usage and refining logic.
+- **Mobile-first** responsive development.
 
-## Where to find everything
+---
 
-Your task is to build out the project to the design file provided. You can download the Figma design file on the platform. **Please be sure not to share it with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
+## 🚀 How It Works
 
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes. So if you don't see an image in a specific folder, it will typically be in another folder for that page.
+1. **Location & Time**  
+   - On page load, the app requests location and timezone info from `ipwho.is` **based on the user’s IP**.
+   - Displays the current time and date according to the detected timezone.
 
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project.
+2. **Dynamic Backgrounds**  
+   - Background image and styling change automatically depending on whether it’s morning, daytime, or evening.
 
-## Building your project
+3. **Quotes**  
+   - Fetches a new random quote from `quoteslate.vercel.app` each time the refresh button is clicked.
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+4. **"More" Section with Auto Scroll**  
+   - Displays additional time-related info:
+     - Current timezone
+     - Day of the year
+     - Day of the week
+     - Week number  
+   - When toggled open, the page automatically **scrolls down** to reveal the section.  
+   - When toggled closed, the page **scrolls back up** smoothly.
 
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/). **⚠️ IMPORTANT ⚠️: There are already a couple of `.gitignore` files in this project. Please do not remove them or change the content of the files. If you create a brand new project, please use the `.gitignore` files provided in your new codebase. This is to avoid the accidental upload of the Figma design file to GitHub. With these premium challenges, please be sure not to share the Figma design file in your GitHub repo. Thanks!**
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+---
 
-## Deploying your project
+## 🧩 Additional Improvements Beyond Requirements
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+- Implemented a **seconds counter** for a more precise clock display.
+- Added **three background states** (instead of the default two).
+- Created **SCSS mixins** for time-of-day styling.
+- Applied **TypeScript modules** for clean code structure.
+- Implemented **smooth auto-scrolling** for section transitions.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+---
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+## 📚 What I Learned
 
-## Create a custom `README.md`
+This was my **first project using APIs**. I learned how to:
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+- Fetch and process JSON data from external APIs in **TypeScript**.
+- Use **IP-based APIs** to retrieve location and time data.
+- Handle asynchronous operations with **`async/await`**.
+- Combine API data to build a **dynamic UI**.
+- Apply **SCSS mixins** for reusable, theme-based styling.
+- Implement **mobile-first** responsive design.
+- Add **smooth auto-scrolling** interactions to improve UX.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-**⚠️ IMPORTANT ⚠️: With these premium challenges, please be sure not to upload the Figma design file to GitHub when you're submitting to the platform and sharing it around. If you've created a brand new project, the easiest way to do that is to copy across the `.gitignore` provided in this starter project.**
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community).
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi@frontendmentor.io.
-
-**Have fun building!** 🚀
