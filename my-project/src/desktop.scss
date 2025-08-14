@@ -1,0 +1,62 @@
+// === DESKTOP VERSION === //
+
+@media (min-width: 1024px) {
+
+    main {
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-rows: auto auto;
+        padding: 3rem 8rem;
+
+        #quotes-container {
+            grid-column: 1;
+            grid-row: 1;
+            margin-bottom: 15rem;
+
+
+            #refresh-button {
+                margin-left: 1rem !important;
+                justify-self: flex-start;
+
+
+            }
+        }
+
+        #current-time-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end !important;
+            grid-column: 1;
+            grid-row: 2;
+            padding: 0;
+
+            #current-time-zone-top {
+                margin: 0 !important;
+            }
+
+        }
+
+        #more-less-buttons {
+            display: flex;
+            grid-column: 2;
+            grid-row: 2;
+            margin: 0;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 0;
+
+            img:hover {
+                opacity: 0.8;
+            }
+
+            button:focus {
+                outline: 2px solid black; /* black focus outline */
+                outline-offset: -5px;      /* little space from the element */
+        
+            }
+
+        }
+    }
+    
+}

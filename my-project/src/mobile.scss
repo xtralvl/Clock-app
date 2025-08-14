@@ -159,6 +159,8 @@ button {
         margin: 1.5rem 0.3rem 1.5rem 0;
         grid-row: 2;
         grid-column: 1;
+        margin-left: -0.4rem ;
+        
       }
 
       #seconds-and-abbrevation-container-top {
@@ -262,6 +264,7 @@ button {
         max-height: 100rem;  /* large enough to fit content */
         opacity: 1;
         padding: 1.5rem 1rem 3rem 1rem;
+        margin: 0;
       }
     
     

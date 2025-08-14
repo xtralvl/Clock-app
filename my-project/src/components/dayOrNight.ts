@@ -12,16 +12,16 @@ function updateGreeting() {
     if (currentHours >= 5 && currentHours < 12) {
         currentGreeting = 'GOOD MORNING';
         body?.classList.add('morning');
-    } else if (currentHours >= 12 && currentHours < 17) {
+    } else if (currentHours >= 12 && currentHours < 18) {
         currentGreeting = 'GOOD AFTERNOON';
         body?.classList.add('daytime');
     } else {
-        currentGreeting = currentHours >= 17 && currentHours < 21 ? 'GOOD EVENING' : 'GOOD NIGHT';
+        currentGreeting = currentHours >= 18 && currentHours < 21 ? 'GOOD EVENING' : 'GOOD NIGHT';
         body?.classList.add('nighttime');
     }
 
     if (greeting) greeting.textContent = currentGreeting;
-}
+} 
 
 // Run immediately
 updateGreeting();
