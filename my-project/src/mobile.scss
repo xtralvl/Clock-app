@@ -20,9 +20,11 @@ button {
   cursor: pointer;
 }
 
+#bigger-screen-greeting {
+  display: none;
+}
 
 
-@media (max-width: 500px) {
   body {
     font-family: 'Inter', sans-serif;
     padding: 1rem 0 0rem 0;
@@ -114,14 +116,32 @@ button {
 
       }
 
-      #greeting-top {
-        font-size: 20px;
-        line-height: 110%;
-        letter-spacing: 4px;
-        font-weight: regular;
-        margin: 0 0 1rem 0;
-        font-weight: lighter;
+      #greetings-container {
+        display: flex;
+
+        #greeting-top {
+          font-size: 20px;
+          line-height: 110%;
+          letter-spacing: 4px;
+          font-weight: regular;
+          margin: 0 0 1rem 0;
+          font-weight: lighter;
+        }
+  
+        #bigger-screen-greeting {
+          font-size: 20px;
+          line-height: 110%;
+          letter-spacing: 4px;
+          font-weight: regular;
+          margin: 0 0 1rem 0;
+          font-weight: lighter;
+        }
+  
       }
+
+
+
+
     }
 
     #time-abbrevation-zone-container {
@@ -305,5 +325,5 @@ button {
 
       }
     }
-  }
+  
 
